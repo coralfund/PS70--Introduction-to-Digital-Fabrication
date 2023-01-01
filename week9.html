@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        code {
+          font-family: Consolas,"courier new";
+          color: crimson;
+          background-color: #f1f1f1;
+          padding: 2px;
+          font-size: 105%;
+        }
+        </style>
 
 <title>PS70: Intro to Digital Fabrication </title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,6 +20,10 @@
     <div class="navbar-nav">
       <h4><a class="nav-link" href="./index.html">Home</a></h4>
       <h4><a class="nav-link" href="./about.html">About</a></h4>
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
     </div>
   </div>
 </nav>
@@ -19,7 +32,7 @@
 
 <xmp style="display:none;">
 
-<h3>Hand Tools and Fabrication</h3>
+<h3>IoT and Wireless communication</h3>
 <p> 
     <a href="week3.mp4">Demo</a>
     <a href="soilcapacitorwoodencasingoled.jpeg">SoilCapacitorTM's Wood Encase with 16 RBG LEDs</a>
@@ -27,19 +40,26 @@
     <a href="../soilcapacitorwoodencasingoled.jpeg"> 3D Printed Case for LEDs </a>
     <b> </b>
     <div>
-        Project Idea: 1. Avant garde collage with laser printed reflexive sheets cut in flowery form and pasted on wood. 2. Tiny Alberto Giacometti - FX: Sotheby's https://www.sothebys.com/giacometti.
+        <h3> "Blind Owls" with Chase and Joseph</h3>
+       <b> Project Idea: Owl head that spins controlled by an eletronic monitor and captures images with ESP32 and publishes on the server. <b>
+        For this project, I worked in a group with Chase and Joseph. The three components of the project were 1. to set up a Google Firebase Server to remote control a motor and camera, 2. to 3print an owl head to make the motor antromorphic and 3. to set up an ESP32 camera module.
+    <div>
+       <h3> Linking Firebase to Motor </h3>
+       <p> The first step involved connecting the ESP32 to with the Firebase server. We did so by: 
+        <ol>
+        <li> Clicking "Get Started" on Google Firebase's landing page; </li>
+        <li> Creating a new project by clicking "Add Project" and providing a name</li>
+        <li> Selecting a real time database from the left hand side menu and clicking on "Create database"</li>
+        <li> Recording the database's unique link</li>
+        <li> Going to "Project Settings", selecting "Service Accounts" and subsequently "Database Secrets". Copying the Key to connect the live database.</li>
+        <li> Selecting Web Icon under "Project Overview"</li>
+        <li> Adding a firebase SDK by copying and pasting all values fom <code>const firebaseConfig</code>></li>
+        <li> Replacing all values in <code>const firebaseConfig</code> with the keys, which creates a <code>LED_Status</code> switch to toggle LEDs on and off.</li>
+    </ol>
+       </p>
     </div>
     <div>
-        Why? 
-        I wanted to learn how to make LED acrylic sign boards and this was an impromptu version that I created whilst I took time off from my final project fixtures.   
-    </div>
-    <div>
-        What I am using? 
-        Handsaw for cutting wood 
-        Handsaw for cutting acrylic 
-        Drill with engraving forefront to mark the "PS"
-        Printer for getting the rainbow design 
-        LED lights to glorify the design
+       
     
         
     </div>
